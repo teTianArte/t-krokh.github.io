@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tetiana Krokhmalna - Business Systems Integration Consultant</title>
-    <style>
+     <style>
         * {
             margin: 0;
             padding: 0;
@@ -26,7 +26,7 @@
             background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(10px);
             padding: 1.5rem 5%;
-            z-index: 1000;
+            z-index: 2000;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
@@ -88,6 +88,7 @@
         .hamburger.active span:nth-child(3) {
             transform: rotate(-45deg) translate(7px, -6px);
         }
+
         .hero {
             min-height: 100vh;
             display: flex;
@@ -96,6 +97,7 @@
             position: relative;
             padding: 0 5%;
             overflow: hidden;
+            padding-top: 100px;
         }
 
         .hero::before {
@@ -120,7 +122,8 @@
             max-width: 1200px;
             text-align: center;
             position: relative;
-            z-index: 1;
+            z-index: 10;
+            width: 100%;
         }
 
         h1 {
@@ -128,6 +131,8 @@
             margin-bottom: 1rem;
             font-weight: 800;
             line-height: 1.1;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .hero h2 {
@@ -245,21 +250,18 @@
         .competency-icon {
             font-size: 3rem;
             margin-bottom: 1.5rem;
-            text-align: center;
         }
 
         .competency-card h3 {
             font-size: 1.3rem;
             margin-bottom: 1rem;
             color: #667eea;
-            text-align: center;
         }
 
         .competency-card p {
             color: #a0a0a0;
             line-height: 1.8;
             font-size: 0.95rem;
-            text-align: center;
         }
 
         .experience-timeline {
@@ -410,7 +412,16 @@
             border-radius: 20px;
             padding: 2.5rem;
             transition: transform 0.3s, border 0.3s;
-            text-align: center;
+        }
+
+        .education-card:hover {
+            transform: translateY(-10px);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+        }
+
+        .education-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
         }
 
         .education-card .university-logo {
@@ -424,20 +435,10 @@
         }
 
         .education-card .university-logo.jmsb-logo {
-            width: 180px;    
-            height: 100px;      
+            width: 180px;
+            height: 100px;
             background: transparent;
             padding: 0;
-        }   
-
-        .education-card:hover {
-            transform: translateY(-10px);
-            border: 1px solid rgba(102, 126, 234, 0.3);
-        }
-
-        .education-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
         }
 
         .education-card h3 {
@@ -456,8 +457,8 @@
             text-align: center;
             background: rgba(255, 255, 255, 0.02);
             border-radius: 30px;
-            padding: 1rem 3rem;
-            margin: 1rem 0;
+            padding: 5rem 3rem;
+            margin: 4rem 0;
         }
 
         .contact-section h2 {
@@ -518,50 +519,50 @@
             background: rgba(255, 255, 255, 0.08);
         }
 
+        .form-group input.invalid {
+            border: 1px solid rgba(244, 67, 54, 0.5);
+        }
+
+        .form-group input.valid {
+            border: 1px solid rgba(76, 175, 80, 0.5);
+        }
+
+        .email-validation-message {
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        .email-validation-message.error {
+            color: #f44336;
+            display: block;
+        }
+
+        .email-validation-message.success {
+            color: #4caf50;
+            display: block;
+        }
+
+        .email-validation-message.checking {
+            color: #ffc107;
+            display: block;
+        }
+
+        .field-validation-message {
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            color: #f44336;
+            display: none;
+        }
+
+        .field-validation-message.show {
+            display: block;
+        }
+
         .form-group textarea {
             min-height: 150px;
             resize: vertical;
         }
-
-    .form-group input.invalid {
-        border: 1px solid rgba(244, 67, 54, 0.5);
-    }
-
-    .form-group input.valid {
-        border: 1px solid rgba(76, 175, 80, 0.5);
-    }
-
-    .email-validation-message {
-        font-size: 0.85rem;
-        margin-top: 0.5rem;
-        display: none;
-    }
-
-    .field-validation-message {
-        font-size: 0.85rem;
-        margin-top: 0.5rem;
-        color: #f44336;
-        display: none;
-    }
-
-    .field-validation-message.show {
-        display: block;
-    }
-
-    .email-validation-message.error {
-        color: #f44336;
-        display: block;
-    }
-
-    .email-validation-message.success {
-        color: #4caf50;
-        display: block;
-    }
-
-    .email-validation-message.checking {
-        color: #ffc107;
-        display: block;
-    }
 
         .form-submit {
             width: 100%;
@@ -598,7 +599,12 @@
             transition: opacity 0.3s ease;
         }
 
-          .form-message.success {
+        .form-message.show {
+            display: block;
+            opacity: 1;
+        }
+
+        .form-message.success {
             background: rgba(76, 175, 80, 0.1);
             border: 1px solid rgba(76, 175, 80, 0.3);
             color: #4caf50;
@@ -608,12 +614,6 @@
             background: rgba(244, 67, 54, 0.1);
             border: 1px solid rgba(244, 67, 54, 0.3);
             color: #f44336;
-            display: block;
-        }
-
-        .form-message.show { 
-            display: block;
-            opacity: 1;
         }
 
         .button-group {
@@ -631,8 +631,8 @@
         }
 
         @media (max-width: 968px) {
-             .hamburger {
-                display: flex;  /* Shows hamburger on mobile */
+            .hamburger {
+                display: flex;
             }
 
             .nav-links {
@@ -647,13 +647,46 @@
                 box-shadow: 0 10px 27px rgba(0, 0, 0, 0.5);
                 padding: 2rem 0;
                 gap: 0;
-                z-index: 999;
+                z-index: 1999;
             }
 
             .nav-links.active {
-                left: 0;  /* Slides in when active */
+                left: 0;
             }
-        }
+
+            .nav-links li {
+                padding: 1rem 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            .nav-links li:last-child {
+                border-bottom: none;
+            }
+
+            .nav-links a {
+                font-size: 1.1rem;
+            }
+
+            .hero {
+                padding-top: 120px;
+                min-height: 100vh;
+            }
+
+            .hero h1 {
+                font-size: clamp(2rem, 8vw, 3rem);
+                padding: 0 1rem;
+            }
+
+            .hero h2 {
+                font-size: clamp(1.3rem, 5vw, 2rem);
+                padding: 0 1rem;
+            }
+
+            .subtitle {
+                font-size: clamp(1rem, 4vw, 1.2rem);
+                padding: 0 1rem;
+            }
+
             section {
                 padding: 4rem 5%;
             }
@@ -714,7 +747,7 @@
             <p class="subtitle">Driving digital transformation through innovative integration solutions, rigorous analysis, and sustainable IT implementations across financial services and enterprise platforms.</p>
             <div class="contact-info">
                     <a href="https://linkedin.com/in/tetianakrokhmalna" class="contact-item">💼 linkedin.com</a>
-                <span class="contact-item">📍 Quebec, Canada</span>
+                <span class="contact-item">📍 Montreal, Quebec, Canada</span>
             </div>
             <div>
                 <a href="#contact" class="cta-button">Get in Touch</a>
@@ -1006,7 +1039,7 @@
             navLinks.classList.toggle('active');
         });
 
-        
+        // Close menu when clicking on a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('active');
@@ -1037,20 +1070,20 @@
         }
 
         // Email validation
-            const emailInput = document.getElementById('email');
-            const emailValidation = document.getElementById('emailValidation');
-            let emailTimeout;
+        const emailInput = document.getElementById('email');
+        const emailValidation = document.getElementById('emailValidation');
+        let emailTimeout;
 
         // Content validation for English/French legitimate words
-            const nameInput = document.getElementById('name');
-            const subjectInput = document.getElementById('subject');
-            const messageInput = document.getElementById('message');
-            const nameValidation = document.getElementById('nameValidation');
-            const subjectValidation = document.getElementById('subjectValidation');
-            const messageValidation = document.getElementById('messageValidation');
+        const nameInput = document.getElementById('name');
+        const subjectInput = document.getElementById('subject');
+        const messageInput = document.getElementById('message');
+        const nameValidation = document.getElementById('nameValidation');
+        const subjectValidation = document.getElementById('subjectValidation');
+        const messageValidation = document.getElementById('messageValidation');
 
         // Common English and French words dictionary (subset for validation)
-          const legitimateWords = [
+        const legitimateWords = [
             // English common words
             'hello', 'hi', 'dear', 'sir', 'madam', 'regarding', 'about', 'inquiry', 'question', 'interested',
             'position', 'job', 'opportunity', 'application', 'resume', 'experience', 'skills', 'team', 'company',
@@ -1063,6 +1096,7 @@
             'travail', 'projet', 'cherche', 'intéressé', 'intéressée', 'contact', 'discuter', 'rencontre',
             'entretien', 'disponible', 'merci', 'svp', 'vous', 'votre', 'pour', 'avec', 'dans', 'plus'
         ];
+
         function validateTextContent(text, minWords = 2) {
             if (!text || text.trim().length < 3) return false;
             
@@ -1074,7 +1108,7 @@
             
             if (words.length < minWords) return false;
             
-            // Check for repetitive patterns 
+            // Check for repetitive patterns (like "bla bla bla", "test test test")
             const uniqueWords = new Set(words);
             if (words.length >= 3 && uniqueWords.size === 1) {
                 return false; // All words are the same
@@ -1098,7 +1132,7 @@
             const name = this.value.trim();
             if (name.length === 0) return;
             
-            // Name should have at least 2 characters 
+            // Name should have at least 2 characters and look like a real name
             const namePattern = /^[a-zàâäæçéèêëïîôùûüÿœ\s'-]+$/i;
             
             if (!namePattern.test(name)) {
@@ -1220,7 +1254,7 @@
                 emailInput.classList.remove('invalid');
                 emailInput.classList.add('valid');
             }
-        }   
+        }
 
         // Form submission
         const form = document.getElementById('contactForm');
