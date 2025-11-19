@@ -218,6 +218,7 @@
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 20px;
             padding: 3rem;
+              text-align: justify;
         }
 
         .about-content p {
@@ -225,6 +226,7 @@
             color: #c0c0c0;
             margin-bottom: 1.5rem;
             line-height: 1.8;
+          
         }
 
         .competencies-grid {
@@ -726,6 +728,40 @@
         justify-items: center; /* centers each card inside its own column */
     }
 }
+
+.hero-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.hero-text {
+    flex: 1 1 400px;
+}
+
+.hero-photo img {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 40px rgba(102, 126, 234, 0.25);
+}
+
+/* Hide the photo on small screens */
+@media (max-width: 968px) {
+    .hero-layout {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-photo {
+        display: none;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -749,7 +785,13 @@
     </nav>
 
     <section class="hero" id="home"><a href="#home"></a>
+         <div class="hero-layout">
+            <div class="hero-photo">
+                    <img src="Headshot_HD_3.JPG" alt="Portrait">
+            </div>
+    </div>
         <div class="hero-content">
+       
             <h1>Tetiana Krokhmalna</h1>
             <h2><span class="gradient-text">Business Systems Integration Consultant</span></h2>
             <p class="subtitle">Driving digital transformation through innovative integration solutions, rigorous analysis, and sustainable IT implementations across financial services and enterprise platforms.</p>
