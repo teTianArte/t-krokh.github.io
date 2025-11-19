@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetiana Krokhmalna - Business Systems Integration Analyst</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 5%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        nav .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 0 5%;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.1) 0%, transparent 50%);
+            animation: gradientShift 15s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            margin-bottom: 1rem;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .hero h2 {
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: #a0a0a0;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            color: #a0a0a0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item:hover {
+            color: #667eea;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+            margin: 0 0.5rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(102, 126, 234, 0.4);
+        }
+
+        .cta-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+        }
+
+        section {
+            padding: 8rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 3rem;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            color: #c0c0c0;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .competencies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .competency-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: transform 0.3s, background 0.3s, border 0.3s;
+        }
+
+        .competency-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+        }
+
+        .competency-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .competency-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+            text-align: center;
+        }
+
+        .competency-card p {
+            color: #a0a0a0;
+            line-height: 1.8;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+
+        .experience-timeline {
+            max-width: 1000px;
+            margin: 4rem auto 0;
+            position: relative;
+        }
+
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, rgba(102, 126, 234, 0.3) 0%, rgba(118, 75, 162, 0.3) 100%);
+        }
+
+        .timeline-item {
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2.5rem;
+            width: calc(50% - 40px);
+            transition: transform 0.3s, border 0.3s;
+        }
+
+        .timeline-content:hover {
+            transform: translateX(-10px);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: auto;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content:hover {
+            transform: translateX(10px);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 30px;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+        }
+
+        .timeline-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .timeline-content .company {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content .period {
+            color: #888;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .timeline-content ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .timeline-content li {
+            color: #a0a0a0;
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .timeline-content li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+        }
+
+        .skills-section {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 30px;
+            padding: 4rem 3rem;
+            margin-top: 4rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .skill-category h3 {
+            font-size: 1.3rem;
+            color: #667eea;
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(102, 126, 234, 0.1);
+            color: #667eea;
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            transition: all 0.3s;
+        }
+
+        .tag:hover {
+            background: rgba(102, 126, 234, 0.2);
+            border-color: rgba(102, 126, 234, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .education-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: transform 0.3s, border 0.3s;
+            text-align: center;
+        }
+
+        .education-card .university-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.5rem;
+        }
+
+        .education-card .university-logo.jmsb-logo {
+            width: 180px;    
+            height: 100px;      
+            background: transparent;
+            padding: 0;
+        }   
+
+        .education-card:hover {
+            transform: translateY(-10px);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+        }
+
+        .education-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .education-card h3 {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-card .institution {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-section {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 30px;
+            padding: 1rem 3rem;
+            margin: 1rem 0;
+        }
+
+        .contact-section h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-section p {
+            font-size: 1.2rem;
+            color: #a0a0a0;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 3rem auto 0;
+            display: none;
+            text-align: left;
+        }
+
+        .contact-form.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #c0c0c0;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: #e0e0e0;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border 0.3s, background 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border: 1px solid rgba(102, 126, 234, 0.5);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+    .form-group input.invalid {
+        border: 1px solid rgba(244, 67, 54, 0.5);
+    }
+
+    .form-group input.valid {
+        border: 1px solid rgba(76, 175, 80, 0.5);
+    }
+
+    .email-validation-message {
+        font-size: 0.85rem;
+        margin-top: 0.5rem;
+        display: none;
+    }
+
+    .field-validation-message {
+        font-size: 0.85rem;
+        margin-top: 0.5rem;
+        color: #f44336;
+        display: none;
+    }
+
+    .field-validation-message.show {
+        display: block;
+    }
+
+    .email-validation-message.error {
+        color: #f44336;
+        display: block;
+    }
+
+    .email-validation-message.success {
+        color: #4caf50;
+        display: block;
+    }
+
+    .email-validation-message.checking {
+        color: #ffc107;
+        display: block;
+    }
+
+        .form-submit {
+            width: 100%;
+            padding: 1.2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+        }
+
+        .form-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(102, 126, 234, 0.4);
+        }
+
+        .form-submit:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-message {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+          .form-message.success {
+            background: rgba(76, 175, 80, 0.1);
+            border: 1px solid rgba(76, 175, 80, 0.3);
+            color: #4caf50;
+        }
+
+        .form-message.error {
+            background: rgba(244, 67, 54, 0.1);
+            border: 1px solid rgba(244, 67, 54, 0.3);
+            color: #f44336;
+            display: block;
+        }
+
+        .form-message.show { 
+            display: block;
+            opacity: 1;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 5%;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: #666;
+        }
+
+        @media (max-width: 968px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            section {
+                padding: 4rem 5%;
+            }
+
+            .experience-timeline::before {
+                left: 20px;
+            }
+
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 60px !important;
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+
+            .timeline-item:nth-child(even) .timeline-content:hover {
+                transform: translateX(-10px);
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .cta-button {
+                display: block;
+                margin: 0.5rem auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <div class="logo"><a href="#home">TK</a></div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#competencies">Competencies</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="home"><a href="#home"></a>
+        <div class="hero-content">
+            <h1>Tetiana Krokhmalna</h1>
+            <h2><span class="gradient-text">Business Systems Integration Analyst</span></h2>
+            <p class="subtitle">Driving digital transformation through innovative integration solutions, rigorous analysis, and sustainable IT implementations across financial services and enterprise platforms.</p>
+            <div class="contact-info">
+                    <a href="https://linkedin.com/in/tetianakrokhmalna" class="contact-item">💼 linkedin.com</a>
+                <span class="contact-item">📍 Quebec, Canada</span>
+            </div>
+            <div>
+                <a href="#contact" class="cta-button">Get in Touch</a>
+                <a href="#experience" class="cta-button cta-secondary">View Experience</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about-content">
+            <p>Business Systems Integration Analyst with proven expertise in analyzing complex technological challenges and implementing innovative solutions across national and international projects.</p>
+            <p>Specializing in business analysis, IT management, and systems integration with a track record of delivering high-performing, sustainable solutions that bridge the gap between business objectives and technical execution.</p>
+            <p>Recognized for excellence in collaborative teamwork, stakeholder communication, and fostering long-term value creation through rigorous design and strategic implementation.</p>
+        </div>
+    </section>
+
+    <section id="competencies">
+        <h2>Core <span class="gradient-text">Competencies</span></h2>
+        <div class="competencies-grid">
+            <div class="competency-card">
+                <div class="competency-icon">🔍</div>
+                <h3>Business Analysis & Research</h3>
+                <p>Expert in conducting in-depth business process analysis, identifying system issues, and ensuring thorough resolution of irregularities through rigorous testing and validation.</p>
+            </div>
+            <div class="competency-card">
+                <div class="competency-icon">🔗</div>
+                <h3>Systems Integration</h3>
+                <p>Specialized in designing and implementing seamless connectivity between Back-End and Front-End systems, ensuring data integrity across complex financial platforms.</p>
+            </div>
+            <div class="competency-card">
+                <div class="competency-icon">⚙️</div>
+                <h3>Technical Development</h3>
+                <p>Proficient in developing, deploying, and maintaining complex workflows, custom extensions, and automated test packages for enterprise financial systems.</p>
+            </div>
+            <div class="competency-card">
+                <div class="competency-icon">🚀</div>
+                <h3>Project Delivery</h3>
+                <p>Demonstrated ability to deliver major software upgrades and integration projects on schedule and within budget while maintaining quality and stakeholder satisfaction.</p>
+            </div>
+            <div class="competency-card">
+                <div class="competency-icon"></div> 
+            </div>
+            <div class="competency-card">
+                <div class="competency-icon">🤝</div>
+                <h3>Stakeholder Management</h3>
+                <p>Skilled communicator bridging technical and business teams, providing frontline support, and fostering collaboration for project success across global operations.</p>
+            </div>
+            <div class="competency-card">
+                <div class="competency-icon">📊</div>
+                <h3>Quality Assurance</h3>
+                <p>Expert in Agile methodologies, DevOps practices, and comprehensive testing strategies from unit to system-level validation using automated frameworks.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Professional <span class="gradient-text">Experience</span></h2>
+        <div class="experience-timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                     <h3>Associate | Technology</h3>
+                    <div class="company">Synechron Canada Inc.</div>
+                    <div class="period">2021 - 2024</div>
+                    <ul>
+                        <li>Detail-oriented Associate Technology professional with hands-on experience in Murex (MX.3) configuration, technical analysis, and support.</li>
+                        <li> Skilled in trade lifecycle, MxML interfaces, Datamart reporting, and SQL/Unix troubleshooting.</li>
+                        <li>Strong understanding of financial products and end-to-end system workflows, with experience working in Agile delivery environments.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Operations Consultant</h3>
+                    <div class="company">Murex Canada Software Limited</div>
+                    <ul>
+                        <li>Conducted in-depth analyses of business processes and system issues with thorough resolution</li>
+                        <li>Collaborated with multidisciplinary teams to resolve multi-stream challenges</li>
+                        <li>Delivered prompt resolutions in high-priority scenarios</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Business Analyst | Operations </h3>
+                    <div class="company">Dart Enterprises Ltd.</div>
+                    <ul>
+                        <li>Successfully managed major Murex (MX.3) software upgrade spanning 28 versions, delivered on schedule and within budget</li>
+                        <li>Performed comprehensive functional and technical testing at each project phase</li>
+                        <li>Trained end-users and optimized operational processes for successful Go-Live</li>
+                        <li>Provided functional and technical post-Go-Live support enabling efficient transition</li>
+                        <li>Created essential documentation for technical teams and business users</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Integration Consultant</h3>
+                    <div class="company">Northern Trust Corporation</div>
+                    <ul>
+                        <li>Designed, automated, and executed comprehensive tests for back-office integration of MX.3 platform across AMER, APAC, and EMEA regions</li>
+                        <li>Conducted detailed business-scope analysis and risk assessments for full testing coverage</li>
+                        <li>Built and deployed automated test packages from unit to system tests covering trade captures, processing, settlements, and accounting impacts</li>
+                        <li>Managed migration and validation of transactional data within automated tests</li>
+                        <li>Provided cross-functional support to enhance automation and improve process quality</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Senior Administrator</h3>
+                    <div class="company">National Bank of Canada</div>
+                    <div class="period">2014 - 2015</div>
+                    <ul>
+                        <li>Executed daily financial transactions on Capital Market products for AMER and EMEA regions</li>
+                        <li>Administered portfolio data ensuring accuracy and reliability across multiple banking systems</li>
+                        <li>Maintained high service standards and compliance with banking regulations</li>
+                        <li>Ensured efficiency, accuracy, and operational quality meeting organizational objectives</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Technical <span class="gradient-text">Expertise</span></h2>
+        <div class="skills-section">
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming & Scripting</h3>
+                    <div class="skill-tags">
+                        <span class="tag">SQL</span>
+                        <span class="tag">Java</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Shell Scripting</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Database Systems</h3>
+                    <div class="skill-tags">
+                        <span class="tag">SQL Server</span>
+                        <span class="tag">Sybase</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Web & Data Technologies</h3>
+                    <div class="skill-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">XML</span>
+                        <span class="tag">XSL</span>
+                        <span class="tag">JSON</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Version Control & CI/CD</h3>
+                    <div class="skill-tags">
+                        <span class="tag">GitHub</span>
+                        <span class="tag">Bitbucket</span>
+                        <span class="tag">Jenkins</span>
+                        <span class="tag">Azure DevOps</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Project Management</h3>
+                    <div class="skill-tags">
+                        <span class="tag">JIRA</span>
+                        <span class="tag">MS Azure Boards</span>
+                        <span class="tag">Agile Methodologies</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Quality Assurance</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Unit Testing</span>
+                        <span class="tag">System Testing</span>
+                        <span class="tag">Regression Testing</span>
+                        <span class="tag">QA Automation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2>Education & <span class="gradient-text">Credentials</span></h2>
+        <div class="education-grid">
+            <div class="education-card">
+                <div class="education-icon">🍁</div>
+                 <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Canadian_Government_Wordmark.svg/320px-Canadian_Government_Wordmark.svg.png" alt="Government of Canada" class="university-logo"> -->
+                <h3>Master of Science in Administration</h3>
+                <div class="institution">Equivalency Recognized</div>
+                <p style="color: #888; margin-top: 0.5rem;">Ministry of Immigration, Diversity and Inclusion, Montreal</p>
+            </div>
+            <div class="education-card">
+                <!-- <div class="education-icon">📚</div> -->
+                <svg class="university-logo jmsb-logo" viewBox="0 0 240 100" xmlns="http://www.w3.org/2000/svg">
+                    <!-- JMSB Shield/Badge -->
+                    <defs>
+                        <linearGradient id="jmsbGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#912338;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#6d1a2a;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M 20 15 L 70 15 L 70 50 Q 70 65 45 72 Q 20 65 20 50 Z" fill="url(#jmsbGrad)" stroke="#912338" stroke-width="2"/>
+                    <text x="45" y="50" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">JM</text>
+                    <!-- Text -->
+                    <text x="85" y="35" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#912338">JOHN MOLSON</text>
+                    <text x="85" y="52" font-family="Arial, sans-serif" font-size="11" fill="#666">School of Business</text>
+                    <text x="85" y="66" font-family="Arial, sans-serif" font-size="9" fill="#999">Concordia University</text>
+                </svg>
+                <h3>Graduate Diploma in Business Administration</h3>
+                <div class="institution">Concordia University</div>
+                <p style="color: #888; margin-top: 0.5rem;">Montreal, Quebec</p>
+            </div>
+            <div class="education-card">
+                <!-- <div class="education-icon">💻</div> -->
+                 <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/29/McGill_University_CoA.svg/150px-McGill_University_CoA.svg.png" alt="McGill University" class="university-logo">
+                <h3>Certificate in Computers and Information Technology</h3>
+                <div class="institution">McGill University</div>
+                <p style="color: #888; margin-top: 0.5rem;">Montreal, Quebec</p>
+            </div>
+            <div class="education-card">
+                <!-- <div class="education-icon">📈</div> -->
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/29/McGill_University_CoA.svg/150px-McGill_University_CoA.svg.png" alt="McGill University" class="university-logo">
+                <h3>Certificate in Marketing</h3>
+                <div class="institution">McGill University</div>
+                <p style="color: #888; margin-top: 0.5rem;">Montreal, Quebec</p>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="contact-section">
+            <h2>Let's <span class="gradient-text">Connect</span></h2>
+            <p>Interested in discussing how my systems integration expertise can contribute to your team's success?</p>
+            <div class="button-group">
+                <button onclick="toggleContactForm()" class="cta-button" id="showFormBtn">Contact Me</button>
+            </div>
+
+            <form class="contact-form" id="contactForm" action="https://formspree.io/f/xrbjeeny" method="POST">
+                               <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                     <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="_replyto" required>
+                    <div class="email-validation-message" id="emailValidation"></div>
+                </div>
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <input type="text" id="subject" name="_subject" required>
+                    <div class="field-validation-message" id="subjectValidation"></div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" required></textarea>
+                    <div class="field-validation-message" id="messageValidation"></div>
+                </div>
+                <button type="submit" class="form-submit">Send Message</button>
+                <div class="form-message" id="formMessage"></div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Tetiana Krokhmalna. Business Systems Integration Consultant</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Contact form toggle
+        function toggleContactForm() {
+            const form = document.getElementById('contactForm');
+            const btn = document.getElementById('showFormBtn');
+            form.classList.toggle('active');
+            btn.textContent = form.classList.contains('active') ? 'Hide Form' : 'Contact Me';
+        }
+
+        // Email validation
+            const emailInput = document.getElementById('email');
+            const emailValidation = document.getElementById('emailValidation');
+            let emailTimeout;
+
+        // Content validation for English/French legitimate words
+            const nameInput = document.getElementById('name');
+            const subjectInput = document.getElementById('subject');
+            const messageInput = document.getElementById('message');
+            const nameValidation = document.getElementById('nameValidation');
+            const subjectValidation = document.getElementById('subjectValidation');
+            const messageValidation = document.getElementById('messageValidation');
+
+        // Common English and French words dictionary (subset for validation)
+          const legitimateWords = [
+            // English common words
+            'hello', 'hi', 'dear', 'sir', 'madam', 'regarding', 'about', 'inquiry', 'question', 'interested',
+            'position', 'job', 'opportunity', 'application', 'resume', 'experience', 'skills', 'team', 'company',
+            'work', 'project', 'looking', 'forward', 'contact', 'discuss', 'meeting', 'interview', 'available',
+            'thank', 'thanks', 'please', 'would', 'could', 'like', 'want', 'need', 'help', 'information',
+            'the', 'and', 'for', 'with', 'your', 'have', 'this', 'that', 'from', 'they', 'will', 'more',
+            // French common words
+            'bonjour', 'salut', 'madame', 'monsieur', 'cher', 'chère', 'concernant', 'sujet', 'question',
+            'poste', 'emploi', 'opportunité', 'candidature', 'expérience', 'compétences', 'équipe', 'entreprise',
+            'travail', 'projet', 'cherche', 'intéressé', 'intéressée', 'contact', 'discuter', 'rencontre',
+            'entretien', 'disponible', 'merci', 'svp', 'vous', 'votre', 'pour', 'avec', 'dans', 'plus'
+        ];
+
+        function validateTextContent(text, minWords = 2) {
+            if (!text || text.trim().length < 3) return false;
+            
+            // Remove special characters and split into words
+            const words = text.toLowerCase()
+                .replace(/[^a-zàâäæçéèêëïîôùûüÿœ\s]/gi, ' ')
+                .split(/\s+/)
+                .filter(word => word.length > 1);
+            
+            if (words.length < minWords) return false;
+            
+            // Check for repetitive patterns 
+            const uniqueWords = new Set(words);
+            if (words.length >= 3 && uniqueWords.size === 1) {
+                return false; // All words are the same
+            }
+            
+            // Check if at least some words are legitimate
+            let legitimateCount = 0;
+            for (const word of words) {
+                if (legitimateWords.some(legitWord => word.includes(legitWord) || legitWord.includes(word))) {
+                    legitimateCount++;
+                }
+            }
+            
+            // At least 30% of words should be legitimate for short text, 20% for longer
+            const threshold = words.length <= 5 ? 0.3 : 0.2;
+            return (legitimateCount / words.length) >= threshold;
+        }
+
+        // Name validation
+        nameInput.addEventListener('blur', function() {
+            const name = this.value.trim();
+            if (name.length === 0) return;
+            
+            // Name should have at least 2 characters 
+            const namePattern = /^[a-zàâäæçéèêëïîôùûüÿœ\s'-]+$/i;
+            
+            if (!namePattern.test(name)) {
+                nameValidation.textContent = '✗ Please enter a valid name (letters only)';
+                nameValidation.classList.add('show');
+                this.classList.add('invalid');
+                return;
+            }
+            
+            if (name.length < 2 || name.split(/\s+/).length < 1) {
+                nameValidation.textContent = '✗ Please enter your full name';
+                nameValidation.classList.add('show');
+                this.classList.add('invalid');
+                return;
+            }
+            
+            nameValidation.classList.remove('show');
+            this.classList.remove('invalid');
+        });
+
+        // Subject validation
+        subjectInput.addEventListener('blur', function() {
+            const subject = this.value.trim();
+            if (subject.length === 0) return;
+            
+            if (!validateTextContent(subject, 2)) {
+                subjectValidation.textContent = '✗ Please enter a meaningful subject in English or French';
+                subjectValidation.classList.add('show');
+                this.classList.add('invalid');
+                return;
+            }
+            
+            subjectValidation.classList.remove('show');
+            this.classList.remove('invalid');
+        });
+
+        // Message validation
+        messageInput.addEventListener('blur', function() {
+            const message = this.value.trim();
+            if (message.length === 0) return;
+            
+            if (message.length < 10) {
+                messageValidation.textContent = '✗ Message is too short (minimum 10 characters)';
+                messageValidation.classList.add('show');
+                this.classList.add('invalid');
+                return;
+            }
+            
+            if (!validateTextContent(message, 3)) {
+                messageValidation.textContent = '✗ Please write a meaningful message in English or French';
+                messageValidation.classList.add('show');
+                this.classList.add('invalid');
+                return;
+            }
+            
+            messageValidation.classList.remove('show');
+            this.classList.remove('invalid');
+        });
+
+        emailInput.addEventListener('input', function() {
+            clearTimeout(emailTimeout);
+            const email = this.value;
+            
+            // Basic format validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (!email) {
+                emailValidation.className = 'email-validation-message';
+                emailValidation.textContent = '';
+                emailInput.classList.remove('valid', 'invalid');
+                return;
+            }
+            
+            if (!emailRegex.test(email)) {
+                emailValidation.className = 'email-validation-message error';
+                emailValidation.textContent = '✗ Please enter a valid email format';
+                emailInput.classList.remove('valid');
+                emailInput.classList.add('invalid');
+                return;
+            }
+            
+            // Show checking status
+            emailValidation.className = 'email-validation-message checking';
+            emailValidation.textContent = '⏳ Verifying email...';
+            emailInput.classList.remove('valid', 'invalid');
+            
+            // Delay verification to avoid too many requests
+            emailTimeout = setTimeout(() => {
+                verifyEmail(email);
+            }, 800);
+        });
+
+        async function verifyEmail(email) {
+            try {
+                // Extract domain from email
+                const domain = email.split('@')[1];
+                
+                // Check if domain has MX records (indicates it can receive emails)
+                const response = await fetch(`https://dns.google/resolve?name=${domain}&type=MX`);
+                const data = await response.json();
+                
+                if (data.Status === 0 && data.Answer && data.Answer.length > 0) {
+                    // Domain has MX records - likely valid
+                    emailValidation.className = 'email-validation-message success';
+                    emailValidation.textContent = '✓ Email domain verified';
+                    emailInput.classList.remove('invalid');
+                    emailInput.classList.add('valid');
+                } else {
+                    // No MX records found
+                    emailValidation.className = 'email-validation-message error';
+                    emailValidation.textContent = '✗ Email domain cannot receive messages';
+                    emailInput.classList.remove('valid');
+                    emailInput.classList.add('invalid');
+                }
+            } catch (error) {
+                // If verification fails, just check format
+                emailValidation.className = 'email-validation-message success';
+                emailValidation.textContent = '✓ Email format is valid';
+                emailInput.classList.remove('invalid');
+                emailInput.classList.add('valid');
+            }
+        }   
+
+        // Form submission
+        const form = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Validate all fields before submission
+            const name = nameInput.value.trim();
+            const subject = subjectInput.value.trim();
+            const message = messageInput.value.trim();
+            
+            let isValid = true;
+            
+            // Validate name
+            if (!name || name.length < 2) {
+                nameValidation.textContent = '✗ Please enter your full name';
+                nameValidation.classList.add('show');
+                nameInput.classList.add('invalid');
+                isValid = false;
+            }
+            
+            // Validate subject
+            if (!validateTextContent(subject, 2)) {
+                subjectValidation.textContent = '✗ Please enter a meaningful subject in English or French';
+                subjectValidation.classList.add('show');
+                subjectInput.classList.add('invalid');
+                isValid = false;
+            }
+            
+            // Validate message
+            if (message.length < 10 || !validateTextContent(message, 3)) {
+                messageValidation.textContent = '✗ Please write a meaningful message in English or French';
+                messageValidation.classList.add('show');
+                messageInput.classList.add('invalid');
+                isValid = false;
+            }
+            
+            if (!isValid) {
+                formMessage.textContent = 'Please correct the errors above before submitting.';
+                formMessage.classList.remove('success');
+                formMessage.classList.add('error', 'show');
+                return;
+            }
+            
+            const submitBtn = form.querySelector('.form-submit');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            
+            formMessage.classList.remove('success', 'error', 'show');
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    formMessage.textContent = 'Thank you for your message! I will get back to you soon.';
+                    formMessage.classList.remove('error');
+                    formMessage.classList.add('success', 'show');
+                    form.reset();
+                    // Clear validation messages
+                    document.querySelectorAll('.field-validation-message').forEach(el => el.classList.remove('show'));
+                    document.querySelectorAll('input, textarea').forEach(el => el.classList.remove('invalid', 'valid'));
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                formMessage.textContent = 'Oops! There was a problem sending your message. Please try again or email me directly at tetiana.krokhmalna@gmail.com';
+                formMessage.classList.remove('success');
+                formMessage.classList.add('error', 'show');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+            }
+        });
+    </script>
+</body>
+</html>
