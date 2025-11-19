@@ -202,6 +202,7 @@
             padding: 8rem 5%;
             max-width: 1400px;
             margin: 0 auto;
+            scroll-margin-top: 120px;
         }
 
         h2 {
@@ -718,6 +719,13 @@
                 margin: 0.5rem auto;
             }
         }
+
+        @media (min-width: 1100px) {
+    .competencies-grid {
+        grid-template-columns: repeat(3, minmax(280px, 1fr));
+        justify-items: center; /* centers each card inside its own column */
+    }
+}
     </style>
 </head>
 <body>
@@ -787,9 +795,7 @@
                 <h3>Project Delivery</h3>
                 <p>Demonstrated ability to deliver major software upgrades and integration projects on schedule and within budget while maintaining quality and stakeholder satisfaction.</p>
             </div>
-            <div class="competency-card">
-                <div class="competency-icon"></div> 
-            </div>
+            
             <div class="competency-card">
                 <div class="competency-icon">🤝</div>
                 <h3>Stakeholder Management</h3>
@@ -1032,7 +1038,7 @@
     <script>
         // Hamburger menu toggle
         const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
+        const navLinks = document.querySelector('.nav-links');
 
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
