@@ -88,31 +88,6 @@
         .hamburger.active span:nth-child(3) {
             transform: rotate(-45deg) translate(7px, -6px);
         }
-
-    @media (max-width: 968px) {
-        .hamburger {
-            display: flex;
-        }
-
-        .nav-links {
-            position: fixed;
-            left: -100%;
-            top: 80px;
-            flex-direction: column;
-            background: rgba(10, 10, 10, 0.98);
-            width: 100%;
-            text-align: center;
-            transition: left 0.3s;
-            box-shadow: 0 10px 27px rgba(0, 0, 0, 0.5);
-            padding: 2rem 0;
-            gap: 0;
-            z-index: 999;
-        }
-
-        .nav-links.active {
-            left: 0;
-        }
-    }
         .hero {
             min-height: 100vh;
             display: flex;
@@ -656,11 +631,29 @@
         }
 
         @media (max-width: 968px) {
-            .nav-links {
-                gap: 1rem;
-                font-size: 0.9rem;
+             .hamburger {
+                display: flex;  /* Shows hamburger on mobile */
             }
 
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 80px;
+                flex-direction: column;
+                background: rgba(10, 10, 10, 0.98);
+                width: 100%;
+                text-align: center;
+                transition: left 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.5);
+                padding: 2rem 0;
+                gap: 0;
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                left: 0;  /* Slides in when active */
+            }
+        }
             section {
                 padding: 4rem 5%;
             }
